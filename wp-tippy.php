@@ -16,7 +16,7 @@ wp_enqueue_script('popper', 'https://unpkg.com/@popperjs/core@2/dist/umd/popper.
 
 /*  Create a Tippy.js instance, where both $elementID and $options are required parameters:
     @param String $elementID – The ID of the DOM element to which you'd like to attach a tooltip
-    @param Array[] $properties – The array of properties to customize the instance, as detailed at: https://atomiks.github.io/tippyjs/v6/all-props/
+    @param mixed[] $properties – The array of properties to customize the instance, as detailed at: https://atomiks.github.io/tippyjs/v6/all-props/
 */
 
 function createTippyInstance($elementID, $properties) {
