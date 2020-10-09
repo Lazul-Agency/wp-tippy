@@ -10,9 +10,17 @@ Version: 1.2.4
 License: MIT
 */
 
-//  Enqueue the necessary Tippy.js and Popper.js scripts
+//  Enqueue the necessary Tippy.js and Popper.js scripts for DEVELOPMENT ENVIRONMENT
 wp_enqueue_script('tippy', 'https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js');
 wp_enqueue_script('popper', 'https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js');
+
+/*  OR
+
+    Enqueue the necessary Tippy.js and Popper.js scripts for PRODUCTION ENVIRONMENT
+wp_enqueue_script('tippy', 'https://unpkg.com/tippy.js@6');
+wp_enqueue_script('popper', 'https://unpkg.com/@popperjs/core@2');
+
+*/
 
 /*  Create a Tippy.js instance, where both $elementID and $options are required parameters:
     @param String $elementID – The ID of the DOM element to which you'd like to attach a tooltip
