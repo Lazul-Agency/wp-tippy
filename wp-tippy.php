@@ -31,6 +31,20 @@ wp_enqueue_script('popper', 'https://unpkg.com/@popperjs/core@2');
 */
 
 function createTippyInstance($elementID, $properties) {
+
+    
+    //  If WP Role Filter exists, then validate the filter
+    if (isset($wpRoleFilter)) {
+        $wpCurrentUser = wp_get_current_user();
+        $wpCurrentRole = $wpCurrentUser -> roles[0];
+        if ($wpCurrentRole == $wpRoleFilter) {
+            echo "<script>
+      		tippy('$elementID', $properties);
+    		</script>";
+        }
+    }
+    
+    //  WP Role Filter unset, display for all users
     echo "<script>
       		tippy('$elementID', $properties);
     		</script>";
