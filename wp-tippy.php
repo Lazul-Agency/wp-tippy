@@ -14,6 +14,9 @@ License: MIT
 wp_enqueue_script('tippy', 'https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js');
 wp_enqueue_script('popper', 'https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js');
 
+//  Set default to no filters for the WP Role Filter feature
+$wpRoleFilter = null;
+
 /*  OR
 
     Enqueue the necessary Tippy.js and Popper.js scripts for PRODUCTION ENVIRONMENT
@@ -28,6 +31,7 @@ wp_enqueue_script('popper', 'https://unpkg.com/@popperjs/core@2');
 */
 
 function createTippyInstance($elementID, $properties) {
+
     
     //  If WP Role Filter exists, then validate the filter
     if (isset($wpRoleFilter)) {
