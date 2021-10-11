@@ -48,5 +48,10 @@ function createTippyInstance($elementID, $properties) {
     echo "<script>
       		tippy('$elementID', $properties);
     		</script>";
+    
+    //  Notify console for debugging purposes
+    echo "<script>
+            console.log('Tippy.js initiated');
+            </script>";
 }
 ?>
