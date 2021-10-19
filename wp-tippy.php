@@ -37,6 +37,9 @@ function createTippyInstance($elementID, $properties) {
     if (isset($wpRoleFilter)) {
         $wpCurrentUser = wp_get_current_user();
         $wpCurrentRole = $wpCurrentUser -> roles[0];
+        if ($wpCurrentRole == 'admin' || $wpCurrentRole == 'administrator') {
+            exit();
+        }
         if ($wpCurrentRole == $wpRoleFilter) {
             echo "<script>
       		tippy('$elementID', $properties);
