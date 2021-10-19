@@ -53,5 +53,10 @@ function createTippyInstance($elementID, $properties) {
     echo "<script>
             console.log('Tippy.js initiated');
             </script>";
+    
+    //  Send $elementID to console
+    echo "<script>
+            console.log('Tippy.js says: Element ID is $elementID');
+            </script>";
 }
 ?>
