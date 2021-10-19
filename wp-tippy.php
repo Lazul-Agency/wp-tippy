@@ -36,6 +36,7 @@ function createTippyInstance($elementID, $properties) {
     //  If WP Role Filter exists, then validate the filter
     if (isset($wpRoleFilter)) {
         $wpCurrentUser = wp_get_current_user();
+        $wpCurrentUserID = get_current_user_id();
         $wpCurrentRole = $wpCurrentUser -> roles[0];
         if ($wpCurrentRole == 'admin' || $wpCurrentRole == 'administrator') {
             exit();
@@ -61,5 +62,11 @@ function createTippyInstance($elementID, $properties) {
     echo "<script>
             console.log('Tippy.js says: Element ID is $elementID');
             </script>";
+}
+
+function dismissPersistent($elementID) {
+    global $wpdb;
+    $result = $wpdb->query("DELETE * FROM wp_usermeta WHERE tippy_id = '$elementID' AND user_id = '$wpCurrentUserID'");
+    return result;
 }
 ?>
